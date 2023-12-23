@@ -81,9 +81,8 @@ public class TableModel extends AbstractTableModel
 		}
 		catch (IOException e)
 		{
-			// Send the io exception information to the standard error output
-			System.err.println("IO error when reading the file.");
-			System.err.println(e.getMessage());
+			// rethrow the io exception
+			throw new RuntimeException(e);
 		}
 	}
 
